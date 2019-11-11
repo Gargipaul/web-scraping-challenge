@@ -3,12 +3,13 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 
 #Site Navigation
-executable_path = {"executable_path": r"\Users\gargi\OneDrive\Desktop\Rutgers\homework\12-Web-Scraping-and-Document-Databases\Instructions\chromedriver"}
-browser = Browser("chrome", **executable_path, headless=False)
 
 
 # Defining scrape & dictionary
 def scrape():
+    executable_path = {"executable_path": "Chromedriver.exe"}
+    browser = Browser("chrome", **executable_path, headless=False)
+
     final_data = {}
     output = marsNews()
     final_data["mars_news"] = output[0]
