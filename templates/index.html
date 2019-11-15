@@ -1,146 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image" href="https://pngimg.com/uploads/mars_planet/mars_planet_PNG13.png">
+    <meta charset="UTF-8">
+    <meta name ="viewport" content ="width=device-width", initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mission to Mars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-
-<body class="text-white" style="background-color:black;">
+<body>
     <div class="container">
-
-        <!-- Jumbotron -->
-        <div class="jumbotron text-center" style="background-image: url(https://cdn.theatlantic.com/static/mt/assets/science/0831Pic.jpg); background-size: 100%; height: 100%;">
-            <h1 class="display-4">Mission to Mars</h1>
-            <a class="btn btn-lg text-white" style="background-color:#c1440e;" href="https://www.jpl.nasa.gov" role="button">Scrape New
-                Data</a>
+        <div class="jumbotron text-center">
+          <h1>Mission to Mars</h1>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
-
-        <!-- News Section -->
-        <div class="container">
-            <h3>Latest News of Mars</h4>
-            
-        </div>
-            <h6 style="color: #c1440e" href="https://www.jpl.nasa.gov" role="button">NASA's Mars 2020 Heads Into the Test Chamber
-
-NASA’s 2020 Rover Moves into Mars Simulation Chamber (time lapse)</h6>
-            
-            <p> NASA’s 2020 Rover Moves into Mars Simulation Chamber (time lapse): In this time-lapse video, taken at NASA's Jet Propulsion Laboratory in Pasadena, California, bunny-suited engineers move the Mars 2020 rover into a large vacuum chamber for testing in Mars-like environmental conditions. Full caption and download. In this time-lapse video, taken on Oct. 9, 2019, at NASA's Jet Propulsion Laboratory in Pasadena, California, bunny-suited engineers move the Mars 2020 rover from a high bay in the Spacecraft Simulator Building into the facility’s large vacuum chamber for testing in Mars-like environmental conditions."Whenever you move the rover, it is a big deal," said Mars 2020 engineer Chris Chatellier of NASA's Jet Propulsion Laboratory in Pasadena, California. "There is a technician on every corner, and other engineers and safety inspectors are monitoring and assisting every step of the way. Every move is choreographed, briefed and rehearsed."After chamber testing, the 2020 rover was moved back to JPL's Spacecraft Assembly Facility where it is undergoing radio-emissions testing. Mars 2020 will launch from Cape Canaveral Air Force Station in Florida in July 2020. It will land at Jezero Crater on Feb. 18, 2021. Charged with returning astronauts to the Moon by 2024, NASA's Artemis lunar exploration plans will establish a sustained human presence on and around the Moon by 2028. We will use what we learn on the Moon to prepare to send astronauts to Mars.</p>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <!-- Left Image-->
-                <div class="col-lg-8 col-md-8 col-sm-12">
-                    <h3>Featured Mars Image</h3>
     
-                    <div class="box">
-                    <link rel="icon" type="image" href ="Images\mars1.jpg"><img src="Images\mars1.jpg"  height="260" width="260"></a>
-                    
+        <div class="row" id="mars-news">
+          <div class="col-md-12">
+              <h3>Latest Mars News</h3>
+                <h4>{{mars.mars_news}}</h4>
+                    <p>{{mars.mars_paragraph}}</p>
+          </div>
+        </div>
+        <div class ="row" id="mars-image">
+            <div class = "col-md-8">
+                <h3>Featured Mars Image</h3>
+                <img src = "{{mars.mars_image}}" alt ="Mars Image">
+            </div>
+            <div class = "col-md-4">
+                    <h4>Current Weather on Mars</h4>
+                    <p>{{mars.mars_weather}}</p>
+                    <br>
+                    <h4>Mars Facts</h4>
+                    <p>{{mars.mars_facts | safe}}</p>
                 </div>
-                
-                <br>
-                    <h3>Mars Facts</h3>
-                    <h3 style ="color: orange"
-                    <div class = "box">
-                    <table border="1" class="dataframe">
-                        <tr style="text-align: right;">
-                            <th></th>
-                                <th>value</th>
-                                    </tr>
-                                        <tr>
-                                            <th>description</th>
-                                                <th></th>
-                                                        </tr>
-                                                            </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                    <th>Equatorial Diameter:</th>
-                                                                    <td>6,792 km</td>
-                                                                    </tr>
-                                                                        <tr>
-                                                                        <th>Polar Diameter:</th>
-                                                                        <td>6,752 km</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Mass:</th>
-                                                                        <td>6.39 � 10^23 kg (0.11 Earths)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Moons:</th>
-                                                                        <td>2 (Phobos &amp; Deimos)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Orbit Distance:</th>
-                                                                        <td>227,943,824 km (1.38 AU)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Orbit Period:</th>
-                                                                        <td>687 days (1.9 years)</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Surface Temperature:</th>
-                                                                        <td>-87 to -5 �C</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>First Record:</th>
-                                                                        <td>2nd millennium BC</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <th>Recorded By:</th>
-                                                                        <td>Egyptian astronomers</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                    </table>
-                        
+        </div>
+        
+        <div class ="row" id="mars-hemispheres">
+            <div class = "col-md-12">
+                <h3><center>Mars Hemispheres</center></h3>
+                {% for hemisphere in mars.mars_hemisphere %}
+                    <div class = "col-md-6">
+                        <div class = "thumbnail">
+                            <img src = "{{hemisphere.img_url}}">
+                                <h3>{{hemisphere.title}}</h3>
+                            </div>
+                        </div>
+                {% endfor %}
                     </div>
             
-                    <br>
-                    <div class = "container">
-                         <h3>Current Weather on Mars</h3>
-                         <div class="box">
-                            <p>Today, Mars has a high temperature of minus 14 degrees Fahrenheit and a low of minus 117. The weather data comes from the Mars rover Curiosity, which has been on the Red Planet for 458 sols.</p>
-                     </div>
-                    </div>
-
-                    </div><!-- Container -->
-
-        <br>
-        <div class = "container">
-        <div style = "alignment":"right">
-        <h3>Mars Hemispheres</h3>
-        <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
-        <div class="box">
-        <a href="Images\final_app_part2.png"><img src="Images\final_app_part2.png"  height="260" width="260"></a>
-                    
-                            
-                            
-                            
-                            </div>                                           
-                            
-                </div>
-                        </div>
-                    </div>
-                    
-                </div>
             </div>
-        </div><!-- Close main container -->
-
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-
+        </div>
+        </div>
+        </div>
+      </div>
 </body>
-
 </html>
