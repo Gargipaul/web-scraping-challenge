@@ -8,21 +8,7 @@ from splinter import Browser
 import pandas as pd
 import datetime as dt
 
-#################################################
-# Mac
-#################################################
-# Set Executable Path & Initialize Chrome Browser
 
-
-#################################################
-# Windows
-#################################################
-# Set Executable Path & Initialize Chrome Browser
-# executable_path = {"executable_path": "./chromedriver.exe"}
-# browser = Browser("chrome", **executable_path)
-
-
-#################################################
 # NASA Mars News
 #################################################
 # NASA Mars News Site Web Scraper
@@ -39,10 +25,7 @@ def mars_news(browser):
     html = browser.html
     news_soup = BeautifulSoup(html, "html.parser")
 
-    # Parse Results HTML with BeautifulSoup
-    # Find Everything Inside:
-    #   <ul class="item_list">
-    #     <li class="slide">
+    
     try:
         slide_element = news_soup.select_one("ul.item_list li.slide")
         slide_element.find("div", class_="content_title")
@@ -66,8 +49,7 @@ def featured_image(browser):
     url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(url)
 
-    # Ask Splinter to Go to Site and Click Button with Class Name full_image
-    # <button class="full_image">Full Image</button>
+    
     full_image_button = browser.find_by_id("full_image")
     full_image_button.click()
 
