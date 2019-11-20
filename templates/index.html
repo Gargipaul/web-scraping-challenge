@@ -18,18 +18,18 @@
         <div class="row" id="mars-news">
           <div class="col-md-12">
               <h3>Latest Mars News</h3>
-                <h4>{{mars.mars_news}}</h4>
-                    <p>{{mars.mars_paragraph}}</p>
+                <h4>{{mars.news_t[0]}}</h4>
+                    <p>{{mars.news_t[1]}}</p>
           </div>
         </div>
         <div class ="row" id="mars-image">
             <div class = "col-md-8">
                 <h3>Featured Mars Image</h3>
-                <img src = "{{mars.mars_image}}" alt ="Mars Image">
+                <img src = "{{mars.image}}" alt ="Mars Image">
             </div>
             <div class = "col-md-4">
                     <h4>Current Weather on Mars</h4>
-                    <p>{{mars.mars_weather}}</p>
+                    <p>{{mars.weath}}</p>
                     <br>
                     <h4>Mars Facts</h4>
                     <p>{{mars.mars_facts | safe}}</p>

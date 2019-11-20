@@ -1,16 +1,9 @@
-from flask import Flask, render_template
-# Import scrape_mars
-import scrape
-
-from flask import Flask, render_template
-# Import scrape_mars
-import scrape
-
-# Import our pymongo library, which lets us connect our Flask app to our Mongo database.
+from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
+import scrape
 
-# Create an instance of our Flask app.
-app = Flask(__name__,template_folder='templates')
+app = Flask(__name__)
+
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 client = PyMongo(app)

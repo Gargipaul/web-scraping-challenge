@@ -5,12 +5,13 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 
 #Site Navigation
-executable_path = {"executable_path": "chromedriver.exe"}
-browser = Browser("chrome", **executable_path, headless=False)
+def init_browser(browser):
+    executable_path = {"executable_path": "chromedriver.exe"}
+    return Browser("chrome", **executable_path, headless=False)
 
 
 # Defining scrape & dictionary
-def scrape():
+def scrape(browser):
     final_data = {}
     output = marsNews()
     final_data["mars_news"] = output[0]
@@ -24,7 +25,8 @@ def scrape():
 
 # # NASA Mars News
 
-def marsNews():
+def marsNews(browser):
+    browser = init_browser()
     news_url = "https://mars.nasa.gov/news/"
     browser.visit(news_url)
     html = browser.html
@@ -36,7 +38,8 @@ def marsNews():
     return output
 
 # # JPL Mars Space Images - Featured Image
-def marsImage():
+def marsImage(browser):
+    browser = init_browser()
     image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(image_url)
     html = browser.html
@@ -46,7 +49,8 @@ def marsImage():
     return featured_image_url
 
 # # Mars Weather
-def marsWeather():
+def marsWeather(browser):
+    browser = init_browser()
     
     import tweepy
     # Twitter API Keys
@@ -74,8 +78,9 @@ def marsWeather():
 
 
 # # Mars Facts
-def marsFacts():
-    import pandas as pd
+def marsFacts(bs4):
+    browser = init_browser()
+    
     facts_url = "https://space-facts.com/mars/"
     browser.visit(facts_url)
     mars_data = pd.read_html(facts_url)
@@ -87,7 +92,8 @@ def marsFacts():
 
 
 # # Mars Hemispheres
-def marsHem():
+def marsHem(browser):
+    browser = init_browser()
     import time 
     hemispheres_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
     browser.visit(hemispheres_url)
